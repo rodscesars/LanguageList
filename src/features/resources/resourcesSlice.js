@@ -16,3 +16,11 @@ export const { setResources } = resourcesSlice.actions;
 
 // selectors
 export const selectResources = (state) => state.resources;
+
+export const selectLanguageIds = (state) => [
+  ...new Set(state.resources.map((item) => item.resource.language_id)),
+];
+
+export const selectModuleIds = (state) => [
+  ...new Set(state.resources.map((item) => item.resource.module_id)),
+];
